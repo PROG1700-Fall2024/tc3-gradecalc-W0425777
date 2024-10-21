@@ -16,13 +16,65 @@
 
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
+    Plus = 0.3
+    Minus = (-0.3)
+    A = 4
+    B = 3
+    C = 2
+    D = 1
+    F = 0
 
 
+    print("\nGrade Piont Calculator\n")
+    print("\nValid letter grades that can be entered: A, B, C, D, F.\n")
+    print("\nValid grade modifiers are +, - or nothing.\n")
+    print("\nAll letter grades except F can include a + or - symbol.\n")
+    print("\nCalculated grade point value cannot exceed 4.0.\n")
+    
+    Grade = input("Please enter a letter grade: ").upper()
+    if Grade == "A":
+        G = A
+    elif Grade == "B":
+        G = B
+    elif Grade == "C":
+        G = C
+    elif Grade == "D":
+        G = D
+    elif Grade == "F":
+        G = F
+    else:
+        print("\nYou enterned an invalid letter grad.\n")
+        Grade = input("Please enter a letter grade: ").upper()
+        if Grade == "A":
+            G = A
+        elif Grade == "B":
+            G = B
+        elif Grade == "C":
+            G = C
+        elif Grade == "D":
+            G = D
+        elif Grade == "F":
+            G = F
 
+    Mod = input("\nPlease enter a modifier (+, - or nothering): ")
+    if Mod == "-":
+        M = Minus
+    elif Mod == "+":
+        M = Plus
+    else:
+        M = 0
+  
+    if G == A and (Mod == "-"):
+        Final = A + Minus
+    elif G == A and (M == Plus):
+        Final = A
+    elif G == F and (M == Plus or M == Minus):
+        Final = F
+    else:
+        Final = G + M
 
-
-
-
+    print("\nThe numeric value is: {0:.1f}\n".format(Final))
+        
 
     # YOUR CODE ENDS HERE
 
